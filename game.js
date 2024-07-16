@@ -18,7 +18,8 @@ function createEnemy(){
 
     let enemy = document.createElement('img');
     enemy.src = 'images/mosquito.png';
-    enemy.className = randomSize();
+    enemy.classList.add(randomSize());
+    enemy.classList.add(mirrorEnemySide());
     enemy.style.left = positionX + 'px';
     enemy.style.top = positionY + 'px';
     enemy.style.position = 'absolute';
@@ -36,5 +37,15 @@ function randomSize(){
             return 'enemy2';
         default:
             return 'enemy3';
+    }
+}
+
+function mirrorEnemySide(){
+    let side = Math.floor(Math.random() * 2);
+
+    if(side){
+        return 'sideA';
+    }else{
+        return 'sideB';
     }
 }
