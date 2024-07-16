@@ -1,7 +1,17 @@
 let width = 0;
 let height = 0;
 let lifes = 1;
-let time = 10;
+let time = 30;
+let timeOfCreation = 750;
+let level = window.location.search;
+level = level.replace('?','');
+
+if(level === 'easy'){
+    timeOfCreation = 1500;
+}else if(level === 'normal'){
+    timeOfCreation = 1000;
+}
+
 
 window.onload = resizeBackground();
 window.onresize = resizeBackground();
@@ -27,7 +37,7 @@ function createEnemy() {
     if (document.getElementById('enemy')) {
         document.getElementById('enemy').remove();
 
-        if (lifes > 3) {
+        if (lifes > 2) {
             window.location.replace('game_over.html');
         }
         document.getElementById('l' + lifes).src = 'images/empty_heart.png';

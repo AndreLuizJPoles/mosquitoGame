@@ -1,3 +1,7 @@
+html{
+    cursor: url(images/killer.png) 30 30, auto;
+}
+
 body{
     background-image: url(images/background.jpg);
     background-repeat: no-repeat;
@@ -43,3 +47,4 @@ body{
     font-size: 1.2rem;
     font-weight: 900;
 }
+
