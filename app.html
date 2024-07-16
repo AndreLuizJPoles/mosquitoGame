@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,23 @@
     <title>App</title>
     <script src="game.js"></script>
 </head>
+
 <body>
+    <div class="panel">
+        <div class="life">
+            <img src="images/empty_heart.png" class="heart">
+            <img src="images/empty_heart.png" class="heart">
+            <img src="images/empty_heart.png" class="heart">
+        </div>
+        <div class="timer">Tempo Restante: ?</div>
+    </div>
+
+
     <script>
-        setInterval(function(){
+        setInterval(function () {
             createEnemy();
         }, 1000)
     </script>
 </body>
+
 </html>
