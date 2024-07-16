@@ -9,7 +9,11 @@ function resizeBackground() {
     height = window.innerHeight;
 }
 
-function createEnemy(){
+function createEnemy() {
+    if (document.getElementById('enemy')) {
+        document.getElementById('enemy').remove();
+    }
+
     var positionX = Math.floor(Math.random() * width) - 90;
     var positionY = Math.floor(Math.random() * height) - 90;
 
@@ -23,14 +27,15 @@ function createEnemy(){
     enemy.style.left = positionX + 'px';
     enemy.style.top = positionY + 'px';
     enemy.style.position = 'absolute';
+    enemy.id = 'enemy';
 
     document.body.appendChild(enemy);
 }
 
-function randomSize(){
+function randomSize() {
     let enemyClass = Math.floor(Math.random() * 3);
 
-    switch(enemyClass){
+    switch (enemyClass) {
         case 0:
             return 'enemy1';
         case 1:
@@ -40,12 +45,12 @@ function randomSize(){
     }
 }
 
-function mirrorEnemySide(){
+function mirrorEnemySide() {
     let side = Math.floor(Math.random() * 2);
 
-    if(side){
+    if (side) {
         return 'sideA';
-    }else{
+    } else {
         return 'sideB';
     }
 }
