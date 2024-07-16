@@ -18,13 +18,23 @@ function createEnemy(){
 
     let enemy = document.createElement('img');
     enemy.src = 'images/mosquito.png';
-    enemy.className = 'enemy1';
+    enemy.className = randomSize();
     enemy.style.left = positionX + 'px';
     enemy.style.top = positionY + 'px';
     enemy.style.position = 'absolute';
 
     document.body.appendChild(enemy);
+}
 
-    console.log(enemy.style.left);
-    console.log(enemy.style.top);
+function randomSize(){
+    let enemyClass = Math.floor(Math.random() * 3);
+
+    switch(enemyClass){
+        case 0:
+            return 'enemy1';
+        case 1:
+            return 'enemy2';
+        default:
+            return 'enemy3';
+    }
 }
