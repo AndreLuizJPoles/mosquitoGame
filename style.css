@@ -1,33 +1,36 @@
-html{
+html {
     cursor: url(images/killer.png) 30 30, auto;
 }
 
-body{
+body {
     background-image: url(images/background.jpg);
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
-.enemy1{
+.enemy1 {
     width: 50px;
     height: 50px;
 }
 
-.enemy2{
+.enemy2 {
     width: 65px;
     height: 65px;
 }
 
-.enemy3{
+.enemy3 {
     width: 85px;
     height: 85px;
 }
 
-.sideB{
+.sideB {
     transform: scaleX(-1);
 }
 
-.panel{
+.panel {
     position: absolute;
     width: 190px;
     padding: 10px;
@@ -38,13 +41,12 @@ body{
     opacity: 70%;
 }
 
-.life{
+.life {
     float: left;
 }
 
-.timer{
+.timer {
     float: left;
     font-size: 1.2rem;
     font-weight: 900;
 }
-
