@@ -12,18 +12,20 @@
 <body>
     <div class="panel">
         <div class="life">
-            <img src="images/empty_heart.png" class="heart">
-            <img src="images/empty_heart.png" class="heart">
-            <img src="images/empty_heart.png" class="heart">
+            <img src="images/full_heart.png" class="heart" id="l1">
+            <img src="images/full_heart.png" class="heart" id="l2">
+            <img src="images/full_heart.png" class="heart" id="l3">
         </div>
-        <div class="timer">Tempo Restante: ?</div>
+        <div class="timer">Tempo Restante: <p id="time"></p></div>
     </div>
 
 
     <script>
-        setInterval(function () {
+        document.getElementById('time').innerHTML = time;
+
+        let creationOfEnemies = setInterval(function () {
             createEnemy();
-        }, 1000)
+        }, 2000)
     </script>
 </body>
 

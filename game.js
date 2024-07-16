@@ -1,5 +1,7 @@
 let width = 0;
 let height = 0;
+let lifes = 1;
+let time = 10;
 
 window.onload = resizeBackground();
 window.onresize = resizeBackground();
@@ -9,9 +11,27 @@ function resizeBackground() {
     height = window.innerHeight;
 }
 
+let timer = setInterval(function () {
+    time--;
+
+    if (time < 0) {
+        clearInterval(timer);
+        clearInterval(creationOfEnemies);
+        window.location.replace('victory.html');
+    } else {
+        document.getElementById('time').innerHTML = time;
+    }
+}, 1000);
+
 function createEnemy() {
     if (document.getElementById('enemy')) {
         document.getElementById('enemy').remove();
+
+        if (lifes > 3) {
+            window.location.replace('game_over.html');
+        }
+        document.getElementById('l' + lifes).src = 'images/empty_heart.png';
+        lifes++;
     }
 
     var positionX = Math.floor(Math.random() * width) - 90;
@@ -28,6 +48,9 @@ function createEnemy() {
     enemy.style.top = positionY + 'px';
     enemy.style.position = 'absolute';
     enemy.id = 'enemy';
+    enemy.onclick = function () {
+        this.remove();
+    }
 
     document.body.appendChild(enemy);
 }
